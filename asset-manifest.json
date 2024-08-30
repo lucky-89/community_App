@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/community_App/static/css/main.1ef94fca.css",
+    "main.js": "/community_App/static/js/main.6c61b486.js",
+    "index.html": "/community_App/index.html",
+    "main.1ef94fca.css.map": "/community_App/static/css/main.1ef94fca.css.map",
+    "main.6c61b486.js.map": "/community_App/static/js/main.6c61b486.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ef94fca.css",
+    "static/js/main.6c61b486.js"
+  ]
+}
