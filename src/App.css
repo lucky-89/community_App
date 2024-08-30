@@ -1,38 +1,368 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  padding: 20px;
+}
+
+
+/*  Slidebar */
+.sidebar {
+  width: 250px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.sidebar__header {
+  margin-bottom: 20px;
+}
+
+.sidebar__header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.sidebar__groups {
+  flex-grow: 1;
+}
+
+.sidebar__groupLink {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar__groupLink:hover {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar__footer {
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.sidebar__footerLink {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar__footerLink:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
   }
 }
+
+/* home */
+.home {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .sidebarToggle {
+    display: block;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+  }
+}
+
+/* groupdetails */
+.groupDetail {
+  padding: 20px;
+}
+
+.groupDetail .group__header {
+  margin-bottom: 20px;
+}
+
+.groupDetail .group__tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.groupDetail .group__tab {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.groupDetail .group__tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.groupDetail .group__content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* group */
+.group {
+  padding: 20px;
+}
+
+.group__header {
+  margin-bottom: 20px;
+}
+
+.group__tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.group__tab {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.group__tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.group__content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* createpost */
+.createPost {
+  margin-bottom: 20px;
+}
+
+.createPost textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.createPost button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.createPost button:hover {
+  background-color: #0056b3;
+}
+
+/* event */
+.eventCard {
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.eventCard h4 {
+  margin-bottom: 10px;
+}
+.eventCard p {
+  margin: 5px 0;
+}
+
+.eventCard button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.eventCard button:hover {
+  background-color: #218838;
+}
+
+/* feed */
+.feed {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.feed__post {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.feed__post h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.feed__post p {
+  margin: 0;
+}
+
+/* widget */
+.widgets {
+  width: 300px;
+  margin-left: 20px;
+}
+
+.widgets__widget {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.widgets__widget h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.widgets__widget p {
+  margin: 0;
+}
+.widgets__discussion{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* header */
+.header {
+  background-color: #007bff;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position:sticky;
+  top: 0;
+  height: 60px;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__nav a {
+  color: white;
+  font-weight: bold;
+}
+
+.header__nav a:hover {
+  text-decoration: underline;
+}
+.header__option{
+  margin-left: 10px;
+}
+
+/* eventlist */
+.eventList {
+  margin-top: 20px;
+}
+
+.eventList p {
+  color: #666;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* /createevent */
+.createEvent {
+  margin-bottom: 20px;
+}
+
+.createEvent h3 {
+  margin-bottom: 10px;
+}
+
+.createEvent form {
+  display: flex;
+  flex-direction: column;
+}
+
+.createEvent input,
+.createEvent textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.createEvent button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.createEvent button:hover {
+  background-color: #0056b3;
+}
+
